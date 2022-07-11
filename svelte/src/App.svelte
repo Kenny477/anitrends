@@ -1,7 +1,7 @@
 <script>
     export let bindings;
 
-    let res = bindings.query();
+    let airing = bindings.airing();
 
     function chooseTitle(title) {
         return title.romanji
@@ -21,10 +21,10 @@
         </div>
     </div>
     <div class="carousel space-x-4 rounded-box px-10">
-        {#await res}
+        {#await airing}
             <div class="radial-progress animate-spin" style="--value:70;" />
-        {:then res}
-            {#each res.data.Page.airingSchedules as item}
+        {:then airing}
+            {#each airing.data.Page.airingSchedules as item}
                 <div class="carousel-item w-52">
                     <div class="card image-full bg-base-100 shadow-xl wrap">
                         <figure>

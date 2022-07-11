@@ -1,5 +1,8 @@
 [package]
-name = "anitrends"
+name = "wasm"
+description = "Library that fetches anime data from the AniList GraphQL API"
+repository = "https://github.com/Kenny477/anitrends"
+license =  "MIT"
 version = "0.1.0"
 edition = "2021"
 

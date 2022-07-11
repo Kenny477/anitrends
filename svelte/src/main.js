@@ -1,17 +1,36 @@
 import "./app.css";
 import App from "./App.svelte";
-import wasm from '../../rust/Cargo.toml';
+import init, { greet, airing, trending } from '../wasm/pkg/wasm.js';
+// Don't worry if vscode told you can't find my-crate
+// It's because you're using a local crate
+// after yarn dev, wasm-pack plugin will install my-crate for you
 
-const init = async () => {
-  const bindings = await wasm();
+init().then(() => {
+  console.log('Hi Rust!');
+  greet();
   const app = new App({
     target: document.body,
     props: {
-      bindings,
-    },
+      bindings: {
+        airing,
+        trending
+      }
+    }
   });
-};
-init();
+});
+
+// import wasm from '../rust/Cargo.toml';
+
+// const init = async () => {
+//   const bindings = await wasm();
+//   const app = new App({
+//     target: document.body,
+//     props: {
+//       bindings
+//     },
+//   });
+// };
+// init();
 
 // const app = new App({
 //   target: document.getElementById("app"),

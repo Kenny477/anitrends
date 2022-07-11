@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 4000",
+    "wasm": "wasm-pack build ./wasm --target web",
+    "dev": "yarn wasm && vite --port 3333",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -16,7 +17,8 @@
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.10.7",
     "tailwindcss": "^3.1.5",
-    "vite": "^2.9.9"
+    "vite": "^2.9.14",
+    "vite-plugin-wasm-pack": "^0.1.12"
   },
   "dependencies": {
     "@wasm-tool/rollup-plugin-rust": "^2.2.2",
