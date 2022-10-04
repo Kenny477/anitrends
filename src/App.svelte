@@ -14,6 +14,9 @@
 			? title.native
 			: "No title found";
 	}
+	
+	// Cache result of API calls to trending for 24 hours
+	// See https://dev.to/danawoodman/svelte-quick-tip-connect-a-store-to-local-storage-4idi#:~:text=Here's%20a%20really%20quick%20tip,settings%20retained%20for%20future%20sessions.
 </script>
 
 <main class="h-screen">
